@@ -1,9 +1,10 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 8.0f;
-    [SerializeField] private float speedMultiplier = 1.0f;
+    public float speedMultiplier = 1.0f;
     public Vector2 initialDirection;
     public LayerMask obstacleLayer;
 

@@ -25,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 291402761916517487, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 291402761916517487, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 291402761916517487, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
       propertyPath: m_LocalPosition.z
@@ -63,6 +63,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 336461458517724483, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1164628087449461008, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
       propertyPath: m_Name
       value: Ghost_Clyde
@@ -79,5 +83,36 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: e3dcdbb54165bd844b40187862975f34, type: 3}
+    - target: {fileID: 4628422766896960564, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: duration
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628422766896960564, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5680487024320191346, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: initialBehavior
+      value: 
+      objectReference: {fileID: 908609703918925779}
+    - target: {fileID: 7737024698863707350, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9101705345478916681, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+--- !u!114 &908609703918925779 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4628422766896960564, guid: ce30435b12592944cbf716f8bf9ab927, type: 3}
+  m_PrefabInstance: {fileID: 5523509146700620775}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5571ecfdc7a4dc14fba9fbe377a1ab02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

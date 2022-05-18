@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (this.lives <= 0 && Input.anyKeyDown)
+        if (lives <= 0 && Input.anyKeyDown)
         {
             NewGame();
         }
@@ -33,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
-        foreach (Transform pellet in this.pellets)
+        foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
         }
@@ -43,24 +42,22 @@ public class GameManager : MonoBehaviour
 
     private void ResetState()
     {
-        ResetGhostMultiplier();
-
-        for (int i = 0; i < this.ghosts.Length; i++)
+        for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].gameObject.SetActive(true);
+            ghosts[i].ResetState();
         }
 
-        this.pacman.gameObject.SetActive(true);
+        pacman.ResetState();
     }
 
     private void GameOver()
     {
         for (int i = 0; i < ghosts.Length; i++)
         {
-            this.ghosts[i].gameObject.SetActive(false);
+            ghosts[i].gameObject.SetActive(false);
         }
 
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
     }
 
     private void SetLives(int lives)
@@ -70,12 +67,12 @@ public class GameManager : MonoBehaviour
 
     private void SetScore(int score)
     {
-        this.score = score; 
+        this.score = score;
     }
 
     public void PacmanEaten()
     {
-        this.pacman.gameObject.SetActive(false);
+        pacman.gameObject.SetActive(false);
         //pacman.DeathSequence(); 
 
         SetLives(lives - 1);
@@ -101,9 +98,9 @@ public class GameManager : MonoBehaviour
     {
         pellet.gameObject.SetActive(false);
 
-        SetScore(this.score + pellet.points);
+        SetScore(score + pellet.points);
 
-        if(!HasRemainingPellets())
+        if (!HasRemainingPellets())
         {
             pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
@@ -112,7 +109,11 @@ public class GameManager : MonoBehaviour
 
     public void PowerPelletEaten(PowerPellet pellet)
     {
-        //TODO: changing ghost state
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            ghosts[i].frightened.Enable(pellet.duration);
+        }
+
         PelletEaten(pellet);
         CancelInvoke();
         Invoke(nameof(ResetGhostMultiplier), pellet.duration);
