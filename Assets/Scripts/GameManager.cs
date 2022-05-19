@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private Ghost[] ghosts;
-    [SerializeField] private Pacman pacman;
-    [SerializeField] private Transform pellets;
+    public Ghost[] ghosts;
+    public Pacman pacman;
+    public Transform pellets;
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
@@ -72,8 +72,7 @@ public class GameManager : MonoBehaviour
 
     public void PacmanEaten()
     {
-        pacman.gameObject.SetActive(false);
-        //pacman.DeathSequence(); 
+        pacman.DeathSequence();
 
         SetLives(lives - 1);
 
