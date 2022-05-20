@@ -8,6 +8,8 @@ public class Pacman : MonoBehaviour
     public new Collider2D collider { get; private set; }
     public Movement movement { get; private set; }
 
+    public AudioSource deathSound;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,6 +53,7 @@ public class Pacman : MonoBehaviour
 
     public void DeathSequence()
     {
+        deathSound.Play();
         enabled = false;
         spriteRenderer.enabled = false;
         collider.enabled = false;

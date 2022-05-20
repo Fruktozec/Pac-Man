@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+    public AudioSource startMusic;
 
     public Text gameOverText;
     public Text scoreText;
@@ -30,15 +31,16 @@ public class GameManager : MonoBehaviour
 
     private void NewGame()
     {
+        gameOverText.enabled = false;
+        
+        startMusic.Play();
         SetScore(0);
         SetLives(3);
-        NewRound();
+        Invoke(nameof(NewRound), 4.2f);
     }
 
     private void NewRound()
     {
-        gameOverText.enabled = false;
-
         foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
@@ -93,7 +95,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            GameOver();
+            Invoke(nameof(GameOver), 3.0f);
         }
     }
 
