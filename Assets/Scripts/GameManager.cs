@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public Transform pellets;
     public AudioSource startMusic;
 
+    public Timer timer;
+
     public Text gameOverText;
     public Text scoreText;
     public Text livesText;
@@ -29,14 +31,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         gameOverText.enabled = false;
-        
+
+
+        StartCoroutine(timer.CountdownToStart());
         startMusic.Play();
         SetScore(0);
         SetLives(3);
-        Invoke(nameof(NewRound), 4.2f);
+        NewRound();
+        //Invoke(nameof(NewRound), 4.2f);
     }
 
     private void NewRound()
