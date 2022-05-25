@@ -6,7 +6,13 @@ public class GameManager : MonoBehaviour
     public Ghost[] ghosts;
     public Pacman pacman;
     public Transform pellets;
+
     public AudioSource startMusic;
+    public AudioSource ghostEatenSound;
+    public AudioSource gameSound;
+    public AudioSource pelletEatenSound;
+    public AudioSource powerPelletEatenSound;
+    public AudioSource overSound;
 
     public Timer timer;
 
@@ -35,13 +41,14 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.enabled = false;
 
-
         StartCoroutine(timer.CountdownToStart());
+
         startMusic.Play();
+        gameSound.PlayDelayed(4.2f);
+
         SetScore(0);
         SetLives(3);
         NewRound();
-        //Invoke(nameof(NewRound), 4.2f);
     }
 
     private void NewRound()
@@ -106,6 +113,7 @@ public class GameManager : MonoBehaviour
 
     public void GhostEaten(Ghost ghost)
     {
+        ghostEatenSound.Play();
         int points = ghost.points * ghostMultiplier;
         SetScore(score + points);
         ghostMultiplier++;
@@ -113,12 +121,17 @@ public class GameManager : MonoBehaviour
 
     public void PelletEaten(Pellet pellet)
     {
+        pelletEatenSound.Play();
+
         pellet.gameObject.SetActive(false);
 
         SetScore(score + pellet.points);
 
         if (!HasRemainingPellets())
         {
+            pelletEatenSound.Stop();
+            overSound.PlayScheduled(3f);
+
             pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
         }
@@ -130,6 +143,8 @@ public class GameManager : MonoBehaviour
         {
             ghosts[i].frightened.Enable(pellet.duration);
         }
+        powerPelletEatenSound.Play();
+        gameSound.Stop();
 
         PelletEaten(pellet);
         CancelInvoke();
@@ -151,6 +166,9 @@ public class GameManager : MonoBehaviour
 
     private void ResetGhostMultiplier()
     {
+        powerPelletEatenSound.Stop();
+        gameSound.Play();
+
         ghostMultiplier = 1;
     }
 }
