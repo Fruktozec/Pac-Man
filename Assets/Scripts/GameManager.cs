@@ -22,7 +22,20 @@ public class GameManager : MonoBehaviour
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
+    public int highScore { get; private set; }
     public int lives { get; private set; }
+
+    public static GameManager instance;
+
+    private void Awake()
+    {
+        instance = this;
+
+        if (PlayerPrefs.HasKey("Score"))
+        {
+            highScore = PlayerPrefs.GetInt("Score");
+        }
+    }
 
     private void Start()
     {
@@ -74,6 +87,8 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOverText.enabled = true;
+        gameSound.Stop();
+        powerPelletEatenSound.Stop();
 
         for (int i = 0; i < ghosts.Length; i++)
         {
@@ -93,6 +108,18 @@ public class GameManager : MonoBehaviour
     {
         this.score = score;
         scoreText.text = score.ToString().PadLeft(2, '0');
+
+        HighScore();
+    }
+
+    public void HighScore()
+    {
+        if(score > highScore)
+        {
+            highScore = score;
+
+            PlayerPrefs.SetInt("Score", highScore);
+        }
     }
 
     public void PacmanEaten()
