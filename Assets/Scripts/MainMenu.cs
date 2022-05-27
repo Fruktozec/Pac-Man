@@ -19,14 +19,6 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        //GameObject a = GameObject.Find(nameof(GameManager));
-        //GameManager gameManager = a.GetComponent<GameManager>();
-        //GameManager.instance = gameManager;
-        //GetComponent<Text>().text = "Рекорд: " + gameManager.highScore;
-    }
-
     public void startNewGame()
     {
         SceneManager.LoadScene(newGameScene);
