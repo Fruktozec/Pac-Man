@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,12 +8,14 @@ public class GameManager : MonoBehaviour
     public Pacman pacman;
     public Transform pellets;
 
-    public AudioSource startMusic;
-    public AudioSource ghostEatenSound;
-    public AudioSource gameSound;
-    public AudioSource pelletEatenSound;
-    public AudioSource powerPelletEatenSound;
-    public AudioSource overSound;
+    public AudioSource _audioSource;
+
+    public AudioClip startMusic;
+    public AudioClip ghostEatenSound;
+    public AudioClip gameSound;
+    public AudioClip pelletEatenSound;
+    public AudioClip powerPelletEatenSound;
+    public AudioClip overSound;
 
     public Timer timer;
 
@@ -44,10 +47,22 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lives <= 0 && Input.anyKeyDown)
+        if (lives <= 0 && Input.anyKeyDown) 
         {
             NewGame();
         }
+    }
+
+    public void AudioPlay(AudioClip sound)
+    {
+        _audioSource.clip = sound;
+        _audioSource.Play();
+    }
+
+    public void AudioStop(AudioClip sound)
+    {
+        _audioSource.clip = sound;
+        _audioSource.Stop();
     }
 
     public void NewGame()
@@ -56,12 +71,28 @@ public class GameManager : MonoBehaviour
 
         StartCoroutine(timer.CountdownToStart());
 
-        startMusic.Play();
-        gameSound.PlayDelayed(4.2f);
+        //startMusic.Play();
+        //_audioSource.clip = startMusic;
+        //_audioSource.Play();
+
+        AudioPlay(startMusic);
+
+        //StartCoroutine(delay());
+
+        //_audioSource.clip = gameSound;
+        //_audioSource.PlayDelayed(4.2f);
+
+        AudioPlay(overSound);
 
         SetScore(0);
         SetLives(3);
         NewRound();
+    }
+    public IEnumerator delay()
+    {
+        yield return new WaitForSeconds(4.2f);
+        _audioSource.clip = gameSound;
+        _audioSource.Play();
     }
 
     private void NewRound()
@@ -87,8 +118,11 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOverText.enabled = true;
-        gameSound.Stop();
-        powerPelletEatenSound.Stop();
+        //gameSound.Stop();
+        //powerPelletEatenSound.Stop();
+
+        AudioStop(gameSound);
+        AudioStop(powerPelletEatenSound);
 
         for (int i = 0; i < ghosts.Length; i++)
         {
@@ -140,7 +174,9 @@ public class GameManager : MonoBehaviour
 
     public void GhostEaten(Ghost ghost)
     {
-        ghostEatenSound.Play();
+        //ghostEatenSound.Play();
+        AudioPlay(ghostEatenSound);
+
         int points = ghost.points * ghostMultiplier;
         SetScore(score + points);
         ghostMultiplier++;
@@ -148,7 +184,8 @@ public class GameManager : MonoBehaviour
 
     public void PelletEaten(Pellet pellet)
     {
-        pelletEatenSound.Play();
+        //pelletEatenSound.Play();
+        _audioSource.PlayOneShot(pelletEatenSound);
 
         pellet.gameObject.SetActive(false);
 
@@ -156,9 +193,10 @@ public class GameManager : MonoBehaviour
 
         if (!HasRemainingPellets())
         {
-            pelletEatenSound.Stop();
-            overSound.PlayScheduled(3f);
-
+            //pelletEatenSound.Stop();
+            //overSound.PlayScheduled(3f);
+            _audioSource.clip = overSound;
+            _audioSource.PlayScheduled(3f);
             pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);
         }
@@ -170,8 +208,11 @@ public class GameManager : MonoBehaviour
         {
             ghosts[i].frightened.Enable(pellet.duration);
         }
-        powerPelletEatenSound.Play();
-        gameSound.Stop();
+        //powerPelletEatenSound.Play();
+        //gameSound.Stop();
+
+        AudioPlay(powerPelletEatenSound);
+        AudioStop(gameSound);
 
         PelletEaten(pellet);
         CancelInvoke();
@@ -193,8 +234,11 @@ public class GameManager : MonoBehaviour
 
     private void ResetGhostMultiplier()
     {
-        powerPelletEatenSound.Stop();
-        gameSound.Play();
+        //powerPelletEatenSound.Stop();
+        //gameSound.Play();
+
+        AudioStop(powerPelletEatenSound);
+        AudioPlay(gameSound);
 
         ghostMultiplier = 1;
     }
