@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public AudioSource startMusic;
     public IEnumerator CountdownToStart()
     {
         Time.timeScale = 0;
