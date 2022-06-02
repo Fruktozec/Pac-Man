@@ -4,9 +4,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 8.0f;
-    public float speedMultiplier = 1.0f;
-    public Vector2 initialDirection;
-    public LayerMask obstacleLayer;
+    [SerializeField] private float speedMultiplier = 1.0f;
+    [SerializeField] private Vector2 initialDirection;
+    [SerializeField] private LayerMask obstacleLayer;
 
     public new Rigidbody2D rigidbody { get; private set; }
     public Vector2 direction { get; private set; }

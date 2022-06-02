@@ -3,10 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class GhostEyes : MonoBehaviour
 {
-    public Sprite up;
-    public Sprite down;
-    public Sprite left;
-    public Sprite right;
+    [SerializeField] private Sprite up;
+    [SerializeField] private Sprite down;
+    [SerializeField] private Sprite left;
+    [SerializeField] private Sprite right;
 
     public SpriteRenderer spriteRenderer { get; private set; }
     public Movement movement { get; private set; }

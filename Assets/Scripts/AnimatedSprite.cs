@@ -4,10 +4,10 @@ using UnityEngine;
 public class AnimatedSprite : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer { get; private set; }
-    public Sprite[] sprites = new Sprite[0];
-    public float animationTime = 0.25f;
+    [SerializeField] private Sprite[] sprites = new Sprite[0];
+    [SerializeField] private float animationTime = 0.25f;
     public int animationFrame { get; private set; }
-    public bool loop = true;
+    [SerializeField] private bool loop = true;
 
     private void Awake()
     {

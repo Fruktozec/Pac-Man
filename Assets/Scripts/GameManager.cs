@@ -4,9 +4,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public Ghost[] ghosts;
-    public Pacman pacman;
-    public Transform pellets;
+    [SerializeField] private Ghost[] ghosts;
+    [SerializeField] private Pacman pacman;
+    [SerializeField] private Transform pellets;
 
     [SerializeField] private AudioSource _audioSource;
 

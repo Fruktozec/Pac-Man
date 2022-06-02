@@ -3,12 +3,12 @@ using UnityEngine;
 [RequireComponent(typeof(Movement))]
 public class Pacman : MonoBehaviour
 {
-    public AnimatedSprite deathSequence;
+    [SerializeField] private AnimatedSprite deathSequence;
     public SpriteRenderer spriteRenderer { get; private set; }
     public new Collider2D collider { get; private set; }
     public Movement movement { get; private set; }
 
-    public AudioSource deathSound;
+    [SerializeField] private AudioSource deathSound;
 
     private void Awake()
     {

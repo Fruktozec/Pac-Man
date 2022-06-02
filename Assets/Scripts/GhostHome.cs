@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class GhostHome : GhostBehavior
 {
-    public Transform inside;
-    public Transform outside;
+    [SerializeField] private Transform inside;
+    [SerializeField] private Transform outside;
 
     private void OnEnable()
     {

@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
 
     [SerializeField] private Text highScoreText;
-    public int score;
+    [SerializeField] private int score;
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Score"))
@@ -19,17 +19,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void startNewGame()
+    private void startNewGame()
     {
         SceneManager.LoadScene(newGameScene);
     }
 
-    public void soundOn()
+    private void soundOn()
     {
         audioSource.mute = true;
     }
 
-    public void soundOff()
+    private void soundOff()
     {
         audioSource.mute = false;
     }

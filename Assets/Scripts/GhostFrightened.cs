@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class GhostFrightened : GhostBehavior
 {
-    public SpriteRenderer body;
-    public SpriteRenderer eyes;
-    public SpriteRenderer blue;
-    public SpriteRenderer white;
+    [SerializeField] private SpriteRenderer body;
+    [SerializeField] private SpriteRenderer eyes;
+    [SerializeField] private SpriteRenderer blue;
+    [SerializeField] private SpriteRenderer white;
 
     public bool eaten { get; private set; }
 
