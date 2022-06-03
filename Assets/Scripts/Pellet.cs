@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Pellet : MonoBehaviour
 {
-    [SerializeField] private int points = 10;
+    public int points = 10;
 
     protected virtual void Eat()
     {

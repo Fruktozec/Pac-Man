@@ -1425,11 +1425,12 @@ MonoBehaviour:
   pacman: {fileID: 1400144889}
   pellets: {fileID: 1902794030}
   _audioSource: {fileID: 226001546}
+  startSound: {fileID: 2116411923}
   ghostEatenSound: {fileID: 8300000, guid: ab823e905ad60c64fb8d193f8bfe4e93, type: 3}
   gameSound: {fileID: 8300000, guid: 9ca19448e819c8949b81ac7801adb3ec, type: 3}
   pelletEatenSound: {fileID: 8300000, guid: 50db1e954d8dd9d48bfb9f1600000016, type: 3}
   powerPelletEatenSound: {fileID: 8300000, guid: eb334f182e09b0a48a517754c9bbff97, type: 3}
-  overSound: {fileID: 0}
+  overSound: {fileID: 8300000, guid: 283f6d2b4fac8224a89fc17012142794, type: 3}
   timer: {fileID: 1423620827}
   gameOverText: {fileID: 786250110}
   scoreText: {fileID: 189681574}
@@ -10477,7 +10478,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60bf6fae9ad654e4491054d8f94dbf8c, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0

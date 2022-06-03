@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform pellets;
 
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource startSound;
 
     [SerializeField] private AudioClip ghostEatenSound;
     [SerializeField] private AudioClip gameSound;
@@ -68,10 +69,9 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.enabled = false;
 
-        StartCoroutine(timer.CountdownToStart());
+        
 
-        _audioSource.clip = gameSound;
-        _audioSource.PlayDelayed(4.2f);
+        
 
         SetScore(0);
         SetLives(3);
@@ -80,6 +80,12 @@ public class GameManager : MonoBehaviour
 
     private void NewRound()
     {
+        StartCoroutine(timer.CountdownToStart());
+        startSound.Play();
+
+        _audioSource.clip = gameSound;
+        _audioSource.PlayDelayed(4.2f);
+
         foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
@@ -172,8 +178,10 @@ public class GameManager : MonoBehaviour
 
         if (!HasRemainingPellets())
         {
-            _audioSource.clip = overSound;
-            _audioSource.PlayScheduled(3f);
+            //_audioSource.clip = overSound;
+            //_audioSource.PlayScheduled(3f);
+            _audioSource.Stop();
+            _audioSource.PlayOneShot(overSound);
 
             pacman.gameObject.SetActive(false);
             Invoke(nameof(NewRound), 3.0f);

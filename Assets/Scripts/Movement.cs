@@ -4,7 +4,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] private float speed = 8.0f;
-    [SerializeField] private float speedMultiplier = 1.0f;
+    public float speedMultiplier = 1.0f;
     [SerializeField] private Vector2 initialDirection;
     [SerializeField] private LayerMask obstacleLayer;
 
