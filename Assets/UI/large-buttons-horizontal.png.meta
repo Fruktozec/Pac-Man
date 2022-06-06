@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,6 +100,30 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 512
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -112,7 +136,7 @@ TextureImporter:
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,7 +157,7 @@ TextureImporter:
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +173,12 @@ TextureImporter:
       name: large-buttons-horizontal_2
       rect:
         serializedVersion: 2
-        x: 96
+        x: 97
         y: 64
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +194,12 @@ TextureImporter:
       name: large-buttons-horizontal_3
       rect:
         serializedVersion: 2
-        x: 144
+        x: 145
         y: 64
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,12 +215,12 @@ TextureImporter:
       name: large-buttons-horizontal_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 194
+        y: 64
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +236,12 @@ TextureImporter:
       name: large-buttons-horizontal_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 242
+        y: 64
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,12 +257,12 @@ TextureImporter:
       name: large-buttons-horizontal_6
       rect:
         serializedVersion: 2
-        x: 96
+        x: 0
         y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,12 +278,12 @@ TextureImporter:
       name: large-buttons-horizontal_7
       rect:
         serializedVersion: 2
-        x: 144
+        x: 48
         y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,12 +299,12 @@ TextureImporter:
       name: large-buttons-horizontal_8
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 97
+        y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,12 +320,12 @@ TextureImporter:
       name: large-buttons-horizontal_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 145
+        y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -317,12 +341,12 @@ TextureImporter:
       name: large-buttons-horizontal_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 194
+        y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -338,12 +362,12 @@ TextureImporter:
       name: large-buttons-horizontal_11
       rect:
         serializedVersion: 2
-        x: 144
-        y: 32
+        x: 242
+        y: 48
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -360,11 +384,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -381,11 +405,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 16
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -401,12 +425,12 @@ TextureImporter:
       name: large-buttons-horizontal_14
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
+        x: 97
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -422,12 +446,12 @@ TextureImporter:
       name: large-buttons-horizontal_15
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
+        x: 145
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -443,12 +467,12 @@ TextureImporter:
       name: large-buttons-horizontal_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 194
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -464,12 +488,12 @@ TextureImporter:
       name: large-buttons-horizontal_17
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 242
+        y: 32
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -485,12 +509,12 @@ TextureImporter:
       name: large-buttons-horizontal_18
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
+        x: 0
+        y: 16
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -506,12 +530,12 @@ TextureImporter:
       name: large-buttons-horizontal_19
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
+        x: 48
+        y: 16
         width: 46
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -519,6 +543,216 @@ TextureImporter:
       bones: []
       spriteID: 0c8a3ba26e756464e8d659b1d2e2ae34
       internalID: -650118195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_20
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 16
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3973e34f20af0614a80e23a759a0e99e
+      internalID: -1869571286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_21
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 16
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d4389106f2f0f841a67c6d360b82a6e
+      internalID: 608039032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_22
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 16
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6125a26674ef1ed4d9bddb836fb81ba8
+      internalID: -580786866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_23
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 16
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be8c97ae81419a8478e5c8f8d7d740a7
+      internalID: -1933165087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4bb6555e6330942945432ad22d69bc
+      internalID: 1323816734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_25
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d461d816251f4fe4abf59314ef72452e
+      internalID: 880969343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_26
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5e2d541056da949bde09856fad39f5
+      internalID: -1341608746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_27
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efa0e9afcc51db14d88ecda7c0e024c9
+      internalID: -1985479569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_28
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d7d25ae3e9f34845b8eb2a33c31695d
+      internalID: -2031377759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: large-buttons-horizontal_29
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 0
+        width: 46
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17847cd50588f0e40ba6b2b641c6c6e2
+      internalID: 1919439089
       vertices: []
       indices: 
       edges: []
@@ -538,19 +772,29 @@ TextureImporter:
       large-buttons-horizontal_12: -692526594
       large-buttons-horizontal_7: -770684703
       large-buttons-horizontal_6: -1488959154
+      large-buttons-horizontal_27: -1985479569
       large-buttons-horizontal_15: -152346940
       large-buttons-horizontal_4: -2119450489
+      large-buttons-horizontal_28: -2031377759
+      large-buttons-horizontal_21: 608039032
+      large-buttons-horizontal_25: 880969343
       large-buttons-horizontal_9: -1821623498
+      large-buttons-horizontal_23: -1933165087
+      large-buttons-horizontal_29: 1919439089
       large-buttons-horizontal_1: 340791105
       large-buttons-horizontal_17: -1255086608
+      large-buttons-horizontal_22: -580786866
       large-buttons-horizontal_11: 1400134190
       large-buttons-horizontal_5: -1658987487
       large-buttons-horizontal_8: 17404586
       large-buttons-horizontal_19: -650118195
       large-buttons-horizontal_18: 1246363944
+      large-buttons-horizontal_26: -1341608746
+      large-buttons-horizontal_20: -1869571286
       large-buttons-horizontal_10: 1244215059
       large-buttons-horizontal_2: -2042311720
       large-buttons-horizontal_16: 2136117154
+      large-buttons-horizontal_24: 1323816734
       large-buttons-horizontal_14: -1004198782
       large-buttons-horizontal_3: -4025624
       large-buttons-horizontal_13: 438939255
