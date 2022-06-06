@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,10 +22,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
 
+    [SerializeField] GameOverPanel overPanel;
+
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
     public int highScore { get; private set; }
-    public int lives { get; private set; }
+    public int lives { get; set; }
 
     public static GameManager instance { get; private set; }
 
@@ -47,10 +48,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (lives <= 0 && Input.anyKeyDown) 
-        {
-            NewGame();
-        }
+        //if (lives <= 0 && Input.anyKeyDown)
+        //{
+        //    NewGame();
+        //}
     }
 
     public void AudioPlay(AudioClip sound)
@@ -68,24 +69,20 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         gameOverText.enabled = false;
+        overPanel.gameObject.SetActive(false);
 
-        
-
-        
+        StartCoroutine(timer.CountdownToStart());
+        startSound.Play();
+        _audioSource.clip = gameSound;
+        _audioSource.PlayDelayed(4.2f);
 
         SetScore(0);
         SetLives(3);
         NewRound();
     }
 
-    private void NewRound()
+    public void NewRound()
     {
-        StartCoroutine(timer.CountdownToStart());
-        startSound.Play();
-
-        _audioSource.clip = gameSound;
-        _audioSource.PlayDelayed(4.2f);
-
         foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
@@ -107,6 +104,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         gameOverText.enabled = true;
+        overPanel.gameObject.SetActive(true);
 
         AudioStop(gameSound);
         AudioStop(powerPelletEatenSound);
@@ -119,7 +117,7 @@ public class GameManager : MonoBehaviour
         pacman.gameObject.SetActive(false);
     }
 
-    private void SetLives(int lives)
+    public void SetLives(int lives)
     {
         this.lives = lives;
         livesText.text = "x" + lives.ToString();
@@ -135,7 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void HighScore()
     {
-        if(score > highScore)
+        if (score > highScore)
         {
             highScore = score;
 
@@ -197,7 +195,7 @@ public class GameManager : MonoBehaviour
 
         AudioStop(gameSound);
         AudioPlay(powerPelletEatenSound);
-        
+
 
         PelletEaten(pellet);
         CancelInvoke();

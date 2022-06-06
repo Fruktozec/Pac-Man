@@ -19,17 +19,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    private void startNewGame()
+    public void startNewGame()
     {
         SceneManager.LoadScene(newGameScene);
     }
 
-    private void soundOn()
+    public void soundOn()
     {
         audioSource.mute = true;
     }
 
-    private void soundOff()
+    public void soundOff()
     {
         audioSource.mute = false;
     }
