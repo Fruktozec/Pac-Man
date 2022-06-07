@@ -18,7 +18,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Timer timer;
 
-    [SerializeField] private Text gameOverText;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text livesText;
 
@@ -46,14 +45,6 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
-    private void Update()
-    {
-        //if (lives <= 0 && Input.anyKeyDown)
-        //{
-        //    NewGame();
-        //}
-    }
-
     public void AudioPlay(AudioClip sound)
     {
         _audioSource.clip = sound;
@@ -68,13 +59,10 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        gameOverText.enabled = false;
         overPanel.gameObject.SetActive(false);
 
         StartCoroutine(timer.CountdownToStart());
         startSound.Play();
-        _audioSource.clip = gameSound;
-        _audioSource.PlayDelayed(4.2f);
 
         SetScore(0);
         SetLives(3);
@@ -91,8 +79,19 @@ public class GameManager : MonoBehaviour
         ResetState();
     }
 
-    private void ResetState()
+    public void ResetState()
     {
+        if(lives == 3)
+        {
+            _audioSource.clip = gameSound;
+            _audioSource.PlayDelayed(4.2f);
+        }
+        else
+        {
+            _audioSource.clip = gameSound;
+            _audioSource.Play();
+        }        
+
         for (int i = 0; i < ghosts.Length; i++)
         {
             ghosts[i].ResetState();
@@ -103,7 +102,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-        gameOverText.enabled = true;
         overPanel.gameObject.SetActive(true);
 
         AudioStop(gameSound);

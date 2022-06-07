@@ -15,7 +15,7 @@ MonoBehaviour:
   scopes: 0
   playerPhotoSize: 0
   leaderboardEnable: 0
-  checkAdblock: 1
+  checkAdblock: 0
   fullscreenAdChallenge: 0
   LocalizationEnable: 1
   autolocationInspector: 0

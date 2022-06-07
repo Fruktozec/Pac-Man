@@ -14,12 +14,16 @@ public class GameOverPanel : MonoBehaviour
     public void restartGame()
     {
         gameManager.NewGame();
+
+        gameObject.SetActive(false);
     }
 
     public void advertising()
     {
         gameManager.lives += 1;
         gameManager.SetLives(1);
-        gameManager.NewRound();
+        gameManager.ResetState();
+
+        gameObject.SetActive(false);
     }
 }
