@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class Timer : MonoBehaviour
     {
         Time.timeScale = 0;
         float pauseTime = Time.realtimeSinceStartup + 4.2f;
-        while(Time.realtimeSinceStartup < pauseTime)
+        while (Time.realtimeSinceStartup < pauseTime)
         {
             yield return null;
         }

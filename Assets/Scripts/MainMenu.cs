@@ -14,6 +14,9 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject soundOnObject;
     [SerializeField] private GameObject soundOffObject;
+
+    private YandexGame sdk;
+
     private void Awake()
     {
         if (PlayerPrefs.HasKey("Score"))
@@ -24,14 +27,19 @@ public class MainMenu : MonoBehaviour
 
         if(AudioListener.volume == 0f)
         {
-            soundOffObject.SetActive(false);
+            soundOnObject.SetActive(false);
             soundOffObject.SetActive(true);
         }
         else
         {
-            soundOffObject.SetActive(true);
+            soundOnObject.SetActive(true);
             soundOffObject.SetActive(false);
         }
+    }
+
+    private void Start()
+    {
+        //sdk._FullscreenShow();
     }
 
     public void startNewGame()

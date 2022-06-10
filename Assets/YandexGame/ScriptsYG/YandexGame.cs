@@ -575,7 +575,7 @@ namespace YG
                 CheaterVideoAd.Invoke();
                 CheaterVideoEvent?.Invoke();
 
-                StopAllCoroutines();
+                //StopAllCoroutines();
                 _adBlock = false;
             }
             else

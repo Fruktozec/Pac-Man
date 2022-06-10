@@ -18,8 +18,8 @@ MonoBehaviour:
   checkAdblock: 0
   fullscreenAdChallenge: 0
   LocalizationEnable: 1
-  autolocationInspector: 0
-  callingLanguageCheck: 1
+  autolocationInspector: 1
+  callingLanguageCheck: 0
   languages:
     ru: 1
     en: 1

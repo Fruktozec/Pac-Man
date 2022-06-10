@@ -22,7 +22,7 @@ public class GameOverPanel : MonoBehaviour
     {
         gameManager.lives += 1;
         gameManager.SetLives(1);
-        gameManager.ResetState();
+        //gameManager.ResetState();
 
         gameObject.SetActive(false);
     }

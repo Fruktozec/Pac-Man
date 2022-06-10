@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text livesText;
 
     [SerializeField] GameOverPanel overPanel;
+    [SerializeField] TouchControl touchPanel;
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         overPanel.gameObject.SetActive(false);
+        touchPanel.gameObject.SetActive(true);
 
         StartCoroutine(timer.CountdownToStart());
         startSound.Play();
@@ -71,6 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void NewRound()
     {
+        
+
         foreach (Transform pellet in pellets)
         {
             pellet.gameObject.SetActive(true);
@@ -81,7 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetState()
     {
-        if(lives == 3)
+        if(lives == 3 && score == 0)
         {
             _audioSource.clip = gameSound;
             _audioSource.PlayDelayed(4.2f);
@@ -103,6 +107,7 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         overPanel.gameObject.SetActive(true);
+        touchPanel.gameObject.SetActive(false);
 
         AudioStop(gameSound);
         AudioStop(powerPelletEatenSound);
@@ -142,6 +147,10 @@ public class GameManager : MonoBehaviour
     public void PacmanEaten()
     {
         pacman.DeathSequence();
+        for (int i = 0; i < ghosts.Length; i++)
+        {
+            ghosts[i].gameObject.SetActive(false);
+        }
 
         SetLives(lives - 1);
 

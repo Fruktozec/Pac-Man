@@ -17,6 +17,16 @@ public class Pacman : MonoBehaviour
         movement = GetComponent<Movement>();
     }
 
+    private void Start()
+    {
+        SwipeDetection.SwipeEvent += OnSwipe;
+    }
+
+    private void OnSwipe(Vector2 direction)
+    {
+        movement.SetDirection(direction);
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
