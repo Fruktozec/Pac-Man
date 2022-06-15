@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text livesText;
 
     [SerializeField] GameOverPanel overPanel;
-    [SerializeField] TouchControl touchPanel;
 
     public int ghostMultiplier { get; private set; } = 1;
     public int score { get; private set; }
@@ -61,7 +60,6 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         overPanel.gameObject.SetActive(false);
-        touchPanel.gameObject.SetActive(true);
 
         StartCoroutine(timer.CountdownToStart());
         startSound.Play();
@@ -107,7 +105,6 @@ public class GameManager : MonoBehaviour
     private void GameOver()
     {
         overPanel.gameObject.SetActive(true);
-        touchPanel.gameObject.SetActive(false);
 
         AudioStop(gameSound);
         AudioStop(powerPelletEatenSound);
